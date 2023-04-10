@@ -1,0 +1,142 @@
+<main>
+
+  <!-- breadcrumb area start -->
+  <section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay header-img data-background="assets/img/breadcrumb/breadcrumb-bg-1.jpg">
+     <div class="container">
+        <div class="row">
+           <div class="col-xxl-12">
+              <div class="breadcrumb__content text-center p-relative z-index-1">
+                 <h3 class="breadcrumb__title">Our Blog</h3>
+                 <div class="breadcrumb__list">
+                    <span>Home</span>
+                    <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+                    <span>Blog</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+  <!-- breadcrumb area end -->
+
+  <!-- blog area start -->
+  <section class="blog__area pt-120 pb-120">
+     <div class="container">
+        <div class="row">
+           <div class="col-xxl-8 col-xl-8 col-lg-8">
+              <div class="postbox__wrapper postbox__details pr-20">
+                 <div class="postbox__item transition-3 mb-70">
+                    <div class="postbox__thumb m-img">
+                      <%= image_tag @blog.image %>
+                    </div>
+                    <div class="postbox__content">
+                       <div class="postbox__meta">
+                          <span><i class="far fa-calendar-check"></i> <%= @blog.created_at%> </span>
+                       </div>
+                       <h3 class="postbox__title"> <%= @blog.title %></h3>
+                       <div class="postbox__text mb-40">
+                          <p> <%= @blog.description %></p>
+                       </div>
+                       <div class="postbox__quote grey-bg-2 mb-45 p-relative fix">
+                          <img class="quote" src="assets/img/blog/quote-1.png" alt="">
+                          <blockquote>
+                             <p>After I started learning design with Quillow, I realized that I had Improved to very advanced levels.</p>
+                             <h4>Chris Collins</h4>
+                          </blockquote>
+                       </div>
+                       <div class="postbox__line"></div>
+                      
+                    </div>
+                 </div>
+                 <div class="latest-comments mb-65">
+                    <h3><%= @comments.count %> Comments</h3>
+                    <% @comments.each do |comment| %>
+                    <ul>
+                       <li>
+                          <div class="comments-box grey-bg-2">
+                             <div class="comments-info d-flex">
+                                   <div class="comments-avatar mr-20">
+                                    <%= image_tag comment.user.profile %>
+                                   </div>
+                                   <div class="avatar-name">
+                                      <h5> <%= comment.user.firstname %></h5>
+                                      <span class="post-meta">  <%= comment.created_at %></span>
+                                   </div>
+                             </div>
+                             <div class="comments-text ml-65">
+                                <p> <%= comment.contentofcomment %></p>
+                             </div>
+                          </div>
+                       </li>
+                    </ul>
+                    <% end %>
+                 </div>
+                 <div class="postbox__comment">
+                    <h3>Write a comment</h3>
+                    <%= form_with url: blog_comments_path(@blog), remote: true do |f| %>
+  <%= f.fields_for :comment, Comment.new do |comment_form| %>
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="postbox__comment-input">
+          <%= comment_form.text_area :contentofcomment, placeholder: "Enter your comment here", rows: 3 %>
+        </div>
+      </div>
+      <div class="col-xxl-12">
+        <div class="postbox__comment-btn">
+          <%= comment_form.submit "Submit", class: "btn btn-primary mt-3" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+                 </div>
+              </div>
+           </div>
+           <div class="col-xxl-4 col-xl-4 col-lg-4">
+              <div class="blog__sidebar pl-70">
+                 
+                 <div class="sidebar__widget mb-55">
+                    <div class="sidebar__widget-head mb-35">
+                       <h3 class="sidebar__widget-title">Category</h3>
+                    </div>
+                    <div class="sidebar__widget-content">
+                          <ul>
+                             <li><a href="blog.html">Category</a></li>
+                             <li><a href="blog.html">Video & Tips  (4)</a></li>
+                             <li><a href="blog.html">Education  (8)</a></li>
+                             <li><a href="blog.html">Business  (5)</a></li>
+                             <li><a href="blog.html">UX Design  (3)</a></li>
+                          </ul>
+                    </div>
+                 </div>
+                 <div class="sidebar__widget mb-55">
+                    <div class="sidebar__widget-head mb-35">
+                       <h3 class="sidebar__widget-title">Tags</h3>
+                    </div>
+                    <div class="sidebar__widget-content">
+                       <div class="tagcloud">
+                          <a href="#">Art & Design</a>
+                          <a href="#">Course</a>
+                          <a href="#">Videos</a>
+                          <a href="#">App</a>
+                          <a href="#">Education</a>
+                          <a href="#">Data Science</a>
+                          <a href="#">Machine Learning</a>
+                          <a href="#">Tips</a>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="sidebar__widget mb-55">
+                    <div class="sidebar__banner w-img">
+                       <img src="assets/img/blog/banner/banner-1.jpg" alt="">
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+  <!-- blog area end -->
+
+</main>

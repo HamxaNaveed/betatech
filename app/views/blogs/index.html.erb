@@ -1,0 +1,70 @@
+<main>
+
+   <!-- breadcrumb area start -->
+   <section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay header-img"
+      data-background="assets/img/breadcrumb/breadcrumb-bg-1.jpg">
+      <div class="container">
+         <div class="row">
+            <div class="col-xxl-12">
+               <div class="breadcrumb__content text-center p-relative z-index-1">
+                  <h3 class="breadcrumb__title">Our Blog</h3>
+                  <div class="breadcrumb__list">
+                     <span>
+                        <%= link_to "Home" , root_path%>
+                     </span>
+                     <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+                     <span>Blog</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- breadcrumb area end -->
+
+   <!-- blog area start -->
+   <section class="blog__area pt-120">
+      <div class="container">
+         <div class="row">
+            <div class="col-xxl-8 col-xl-8 col-lg-8">
+               <div class="postbox__wrapper pr-20">
+                  <% @blogs.each do |blog| %>
+                     <article class="postbox__item format-image mb-50 transition-3">
+                        <div class="postbox__thumb w-img">
+                           <%= link_to blog_path(blog.slug) do %>
+                              <%= image_tag blog.image %>
+                                 <% end %>
+                        </div>
+                        <div class="postbox__content">
+                           <div class="postbox__meta">
+                              <span><i class="far fa-calendar-check"></i>
+                                 <%= time_ago_in_words(blog.created_at) %>
+                              </span>
+                              <span><a href="#"><i class="fal fa-comments"></i>
+                                    <%= blog.comments.count %> comments
+                                 </a></span>
+                           </div>
+                           <h3 class="postbox__title">
+                              <%= link_to blog.title, blog_path(blog.slug) %>
+                           </h3>
+                           <div class="postbox__text">
+                              <p>
+                                 <%= blog.description %>
+                              </p>
+                           </div>
+                           <div class="postbox__read-more">
+                              <%= link_to "read more" , blog_path(blog.slug), class: "tp-btn" %>
+                           </div>
+                        </div>
+                     </article>
+                     <% end %>
+
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+   <!-- blog area end -->
+
+</main>

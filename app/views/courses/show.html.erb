@@ -1,0 +1,133 @@
+<main>
+
+   <!-- event area start -->
+   <section class="event__area pt-115 p-relative">
+      <div class="page__title-shape">
+         <img class="page-title-shape-5 d-none d-sm-block" src="assets/img/breadcrumb/page-title-shape-1.png" alt="">
+         <img class="page-title-shape-6" src="assets/img/breadcrumb/page-title-shape-2.png" alt="">
+         <img class="page-title-shape-7" src="assets/img/breadcrumb/page-title-shape-4.png" alt="">
+         <img class="page-title-shape-8" src="assets/img/breadcrumb/page-title-shape-5.png" alt="">
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-xxl-8">
+               <div class="event__wrapper">
+                  <div class="page__title-content mb-25">
+                     <div class="breadcrumb__list breadcrumb__list-2 mb-10">
+                        <span>
+                           <%= link_to "Home" , root_path%>
+                        </span>
+                        <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+                        <span>Courses</span>
+                     </div>
+                     <span class="breadcrumb__title-pre">
+                        <%= @course.course_category.name%>
+                     </span>
+                     <h5 class="breadcrumb__title-2">
+                        <%= @course.title%>
+                     </h5>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- event area end -->
+
+   <!-- event details area start -->
+   <section class="event__area pb-110">
+      <div class="container">
+         <div class="row">
+            <div class="col-xxl-8 col-xl-8 col-lg-8">
+               <div class="event_wrapper">
+                  <div class="event__thumb mb-35 w-img">
+                     <%= image_tag @course.image %>
+
+                  </div>
+                  <div class="event__details mb-35">
+                     <h3>Description</h3>
+                     <p>
+                        <%= @course.description %>
+                     </p>
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4">
+               <div class="event__sidebar pl-70">
+                  <div class="event__sidebar-widget white-bg mb-20">
+                     <div class="event__sidebar-shape">
+                        <img class="event-sidebar-img-2" src="assets/img/events/event-shape-2.png" alt="">
+                        <img class="event-sidebar-img-3" src="assets/img/events/event-shape-3.png" alt="">
+                     </div>
+                     <div class="event__info">
+                        <div class="event__info-meta mb-25 d-flex align-items-center justify-content-between">
+                           <div class="event__info-price">
+                              <h5>$<%= @course.price %>.<span>00</span> </h5>
+                           </div>
+                        </div>
+                        <div class="event__info-content mb-35">
+                           <ul>
+                              <li class="d-flex align-items-center">
+                                 <div class="event__info-icon">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                                       style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                       <path class="st0"
+                                          d="M2,6l6-4.7L14,6v7.3c0,0.7-0.6,1.3-1.3,1.3H3.3c-0.7,0-1.3-0.6-1.3-1.3V6z" />
+                                       <polyline class="st0" points="6,14.7 6,8 10,8 10,14.7 " />
+                                    </svg>
+                                 </div>
+                                 <div class="event__info-item">
+                                    <h5><span>End: </span> July 26, 2022 12:30 am</h5>
+                                 </div>
+                              </li>
+                              <li class="d-flex align-items-center">
+                                 <div class="event__info-icon">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                                       style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                       <path class="st0"
+                                          d="M2,6l6-4.7L14,6v7.3c0,0.7-0.6,1.3-1.3,1.3H3.3c-0.7,0-1.3-0.6-1.3-1.3V6z" />
+                                       <polyline class="st0" points="6,14.7 6,8 10,8 10,14.7 " />
+                                    </svg>
+                                 </div>
+                                 <div class="event__info-item">
+                                    <h5><span>Time:</span> 10:45 AM-01:30 PM</h5>
+                                 </div>
+                              </li>
+                              <li class="d-flex align-items-center">
+                                 <div class="event__info-icon">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                                       style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                                       <path class="st0"
+                                          d="M2,6l6-4.7L14,6v7.3c0,0.7-0.6,1.3-1.3,1.3H3.3c-0.7,0-1.3-0.6-1.3-1.3V6z" />
+                                       <polyline class="st0" points="6,14.7 6,8 10,8 10,14.7 " />
+                                    </svg>
+                                 </div>
+                                 <div class="event__info-item">
+                                    <h5><span>Venue: </span> New York, TX 82760, US</h5>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <% if request.fullpath.include?('mycourse') %>
+                        <% else %>
+                        <div class="event__join-btn">
+                           <%= link_to "Enroll" , new_course_enrollment_path(@course), class: 'tp-btn text-center w-100'
+                              %>
+                        </div>
+                        <% end %>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- event details area end -->
+
+
+</main>

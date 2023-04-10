@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Betatech</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Betatech offers a wide range of technical courses to help you stay up-to-date with the latest trends in technology">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path('favicon.png') %>">
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    </head>
+
+  <body>
+    
+    <%= render "shared/header" %>
+    <% flash.each do |type, message| %>
+      <div class="flash-message <%= type %>">
+        <%= message %>
+        <span class="close">&times;</span>
+      </div>
+    <% end %>
+    <%= yield %>
+    <%= render "shared/footer" %>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".slider__active", {
+         autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+         },
+         loop: true,
+         pagination: {
+            el: ".main-slider-paginations",
+            clickable: true,
+         },
+      });
+   </script>
+  </body>
+</html>

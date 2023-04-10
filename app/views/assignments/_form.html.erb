@@ -1,0 +1,15 @@
+<%= form_with model: assignment, url: assignments_path, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="password__input">
+    <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control" %>
+  </div>
+  <div>
+    <%= form.label :file %>
+      <%= form.file_field :file, class: "form-control" %>
+  </div>
+  <%= form.submit "Upload" , class: "btn btn-primary w-100" %>
+<% end %>

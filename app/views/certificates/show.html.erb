@@ -1,0 +1,68 @@
+<%= @certificate.user_id %>
+   <main>
+
+      <!-- breadcrumb area start -->
+      <section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay header-img"
+         data-background="assets/img/breadcrumb/breadcrumb-bg-1.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content text-center p-relative z-index-1">
+                     <h3 class="breadcrumb__title">Certificate</h3>
+                     <div class="breadcrumb__list">
+                        <span>
+                           <%= link_to "Home" , root_path %>
+                        </span>
+                        <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+                        <span>Certificate</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- breadcrumb area end -->
+
+      <!-- instructor details area start -->
+      <section class="teacher__area pt-120 pb-110">
+
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12 col-xl-12 col-lg-12">
+                  <div class="teacher__wrapper">
+                     <div class="teacher__top d-md-flex align-items-end justify-content-between">
+                        <div class="teacher__info">
+                           <h4>Presented to: <%= @certificate.user.firstname %>
+                                 <%= @certificate.user.lastname%>
+                           </h4>
+                           <span>Certificate Number: <%= @certificate.certificate_number %></span>
+                        </div>
+                     </div>
+                     <div class="teacher__bio">
+                        <h3>Congratulations</h3>
+                        <p>Your dedication, hard work, and commitment have paid off, and this accomplishment is a
+                           testament to your talent and perseverance.
+
+                           Earning a certificate is no small feat, and you should be proud of yourself for completing
+                           the necessary coursework and requirements to achieve this recognition. This achievement
+                           represents a significant step forward in your personal and professional development, and I
+                           have no doubt that it will open up new opportunities for you.
+
+                           Again, congratulations on this impressive achievement, and I wish you continued success in
+                           all your future endeavors.</p>
+                        <% if @certificate.certificate.attached? %>
+                           <%= link_to @certificate.certificate, download: '' ,
+                              class: 'btn btn-outline-primary btn-sm float-right mr-5' do %>
+                              <i class="fa fa-download"></i>
+                              Download
+                              <% end %>
+                                 <% end %>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </section>
+      <!-- instructor details area end -->
+
+
+   </main>

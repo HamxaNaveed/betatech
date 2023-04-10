@@ -1,0 +1,4 @@
+<% flash.each do |type, message| %>
+  <%= content_tag :div, message, class: "alert alert-#{type}" %>
+  <%= javascript_tag "toastr.#{type}('#{message}')" %>
+<% end %>

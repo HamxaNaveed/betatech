@@ -1,0 +1,57 @@
+<main>
+
+  <section class="event__area pt-115 p-relative">
+    <div class="page__title-shape">
+      <img class="page-title-shape-5 d-none d-sm-block" src="assets/img/breadcrumb/page-title-shape-1.png" alt="">
+      <img class="page-title-shape-6" src="assets/img/breadcrumb/page-title-shape-2.png" alt="">
+      <img class="page-title-shape-7" src="assets/img/breadcrumb/page-title-shape-4.png" alt="">
+      <img class="page-title-shape-8" src="assets/img/breadcrumb/page-title-shape-5.png" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-8">
+          <div class="event__wrapper">
+            <div class="page__title-content mb-25">
+              <div class="breadcrumb__list breadcrumb__list-2 mb-10">
+                <span>
+                  <%= link_to "Home" , root_path%>
+                </span>
+                <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+                <span>Courses</span>
+              </div>
+              <span class="breadcrumb__title-pre">
+                <%= @course.course_category.name%>
+              </span>
+              <h5 class="breadcrumb__title-2">
+                <%= @course.title%>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= form_with model: @enrollment, url: course_enrollments_path(course_slug: @course.slug), method: :post do |f| %>
+        <% if @enrollment.errors.any? %>
+          <div class="alert alert-danger">
+            <% @enrollment.errors.each do |error| %>
+              <%= error %>
+                <% end %>
+          </div>
+          <% end %>
+            <%= f.hidden_field :course_id, value: @course.id %>
+
+              <div class="form-group">
+                <%= f.submit "Enroll" , class: "btn btn-primary" %>
+              </div>
+              <% end %>
+
+    </div>
+
+  </section>
+  <!-- event area end -->
+
+  <!-- event details area start -->
+
+  <!-- event details area end -->
+
+
+</main>

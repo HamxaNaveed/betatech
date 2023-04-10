@@ -1,0 +1,62 @@
+<main>
+  <!-- breadcrumb area start -->
+  <section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay header-img"
+    data-background="images/breadcrumb/breadcrumb-bg-1.jpg">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="breadcrumb__content text-center p-relative z-index-1">
+            <h3 class="breadcrumb__title">Password Reset</h3>
+            <div class="breadcrumb__list">
+              <span>Home</span>
+              <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+              <span>Password Reset</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb area end -->
+
+  <!-- sign up area start -->
+  <section class="signup__area p-relative z-index-1 pt-100 pb-145">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
+          <div class="section__title-wrapper text-center mb-55">
+            <h2 class="section__title">
+              Password Reset <br />
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+          <div class="sign__wrapper white-bg">
+
+            <div class="sign__form">
+              <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do
+                |f| %>
+                <%= render "devise/shared/error_messages" , resource: resource %>
+                  <div class="sign__input-wrapper mb-25">
+
+                    <div class="sign__input-wrapper mb-25">
+                      <%= f.label :email %>
+                        <div class="sign__input">
+                          <%= f.email_field :email, autofocus: true, placeholder: "email" %>
+                            <i class="fal fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="actions">
+                      <%= f.submit "Send me reset password instructions" , class: "btn btn-primary w-100" %>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </section>

@@ -1,0 +1,163 @@
+<main>
+
+  <!-- breadcrumb area start -->
+  <section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay header-img data-background="assets/img/breadcrumb/breadcrumb-bg-1.jpg">
+     <div class="container">
+        <div class="row">
+           <div class="col-xxl-12">
+              <div class="breadcrumb__content text-center p-relative z-index-1">
+                 <h3 class="breadcrumb__title">About</h3>
+                 <div class="breadcrumb__list">
+                  <span><%= link_to "Home", root_path%></span>
+                  <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
+                    <span>About</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+  <!-- breadcrumb area end -->
+
+  <!-- about area start -->
+  <section class="about__area pt-120 pb-120 p-relative">
+     <div class="container">
+        <div class="row">
+           <div class="col-xxl-7 col-xl-7 col-lg-7">
+              <div class="about__thumb-wrapper d-sm-flex mr-20 p-relative">
+                 <div class="about__shape">
+                    <img class="about__shape-1 d-none d-sm-block" src="images/about-shape-1.png" alt="">
+                    <img class="about__shape-2 d-none d-sm-block" src="images/about-shape-2.png" alt="">
+                    <img class="about__shape-3" src="images/about-shape-3.png" alt="">
+                 </div>
+                 <div class="about__thumb-left mr-10">
+                    <div class="about__thumb-1 mb-10">
+                       <img src="images/about-1.jpg" alt="">
+                    </div>
+                    <div class="about__thumb-1 mb-10 text-end">
+                       <img src="images/about-3.jpg" alt="">
+                    </div>
+                 </div>
+                 <div class="about__thumb-2 mb-10">
+                    <img src="images/about-2.jpg" alt="">
+                 </div>
+              </div>
+           </div>
+           <div class="col-xxl-5 col-xl-5 col-lg-5">
+              <div class="about__content pl-70 pr-25">
+                 <div class="section__title-wrapper mb-15">
+                    <span class="section__title-pre">About Educal</span>
+                    <h2 class="section__title">Degrees in Various academic Didciplines</h2>
+                 </div>
+                 <p>Not only can university offer an environment rich in our social an cultural experiences.</p>
+
+                 <div class="about__list mb-40">
+                    <ul>
+                       <li><i class="fa-solid fa-check"></i> Access to all our courses</li>
+                       <li><i class="fa-solid fa-check"></i> Learn the latest skills</li>
+                       <li><i class="fa-solid fa-check"></i> Upskill your organization</li>
+                    </ul>
+                 </div>
+
+                 <div class="about__btn">
+                    <a href="about.html" class="tp-btn tp-btn-2">Read more</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+  <!-- about area end -->
+
+  <!-- course area start -->
+  <section class="course__area pt-115 pb-90 grey-bg-3">
+     <div class="container">
+        <div class="row">
+           <div class="col-xxl-12">
+              <div class="section__title-wrapper text-center mb-60">
+                 <span class="section__title-pre">Top Courses</span>
+                 <h2 class="section__title section__title-44">Our Featured Courses</h2>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing aelit, sed do eiusmod</p>
+              </div>
+           </div>
+        </div>
+        <div class="row">
+          <% @courses.each do |course|%>
+           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
+              <div class="course__item white-bg transition-3 mb-30">
+                 <div class="course__thumb w-img fix">
+                  <%= link_to course_path(course.slug) do %> 
+                  <%= image_tag course.image %>
+                <% end %>
+                 </div>
+                 <div class="course__content p-relative">
+                    <div class="course__price">
+                       <span>RS <%= course.price %></span>
+                    </div>
+                    <div class="course__tag">
+                       <a href="#"><%= course.course_category.name %></a>
+                    </div>
+                    <h3 class="course__title">
+                      <%= link_to course.title, course_path(course.slug) %>
+                    </h3>
+                    <% if course.description.length > 250 %>
+                    <p><%= truncate(course.description, length: 250) %> <%= link_to 'Read more', course_path(course.slug), class: 'more-link' %></p>
+                    <% else %>
+                      <p><%= course.description %></p>
+                    <% end %>
+                 </div>
+              </div>
+           </div>
+           <% end %>
+        </div>
+     </div>
+  </section>
+
+  <section class="team__area pt-115">
+     <div class="container">
+        <div class="row align-items-end">
+           <div class="col-xxl-6 col-xl-6 col-lg-6">
+              <div class="section__title-wrapper-2 mb-40">
+                 <span class="section__title-pre-2">Top Instructors</span>
+                 <h3 class="section__title-2">Become A Instruction Instructor.</h3>
+              </div>
+           </div>
+        </div>
+        <div class="row">
+         <% @admins.each do |admin| %>
+         <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
+           <div class="team__item text-center mb-40">
+             <div class="team__thumb">
+               <div class="team__shape">
+                 <img src="images/team-shape-3.png" alt="">
+               </div>
+               <%= image_tag admin.profile %>
+               <div class="team__social transition-3">
+                 <%= link_to admin.fb_link do %>
+                 <i class="fa-brands fa-facebook-f"></i>
+                 <% end %>
+                 <%= link_to admin.twitter_link do %>
+                 <i class="fa-brands fa-twitter"></i>
+                 <% end %>
+                 <%= link_to admin.pintrest_link do %>
+                 <i class="fa-brands fa-pinterest-p"></i>
+                 <% end %>
+                 <%= link_to admin.linkedin do %>
+                 <i class="fa-brands fa-linkedin-in"></i>
+                 <% end %>
+               </div>
+             </div>
+             <div class="team__content">
+               <h3 class="team__title">
+                 <a href=""><%= admin.first_name%> <%= admin.last_name%></a>
+               </h3>
+                    <span class="team__designation">Professor</span>
+                 </div>
+              </div>
+           </div>
+           <% end %>
+        </div>
+     </div>
+  </section>
+  
+</main>

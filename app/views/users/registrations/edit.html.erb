@@ -1,0 +1,50 @@
+
+<section class="profile__menu pb-70 grey-bg-2">
+  <div class="container">
+     <div class="row">
+        <div class="col-xxl-12 col-md-12">
+           <div class="profile__menu-right">
+              <div class="tab-content" id="nav-tabContent">
+                 <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab">
+                    <div class="profile__info">
+                      
+                 
+                    <div class="password__change">
+                       <div class="password__change-top mt-10">
+                          <h3 class="password__change-title">Profile Update</h3>
+                       </div>
+                       <div class="password__form white-bg">
+                          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                          <%= render "users/shared/error_messages", resource: resource %>
+                             <div class="password__input">
+                                <%= f.label :email %><br />
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                             </div>
+                             <div class="password__input">
+                                <%= f.label :password %> <br />
+                                <%= f.password_field :password, autocomplete: "new-password" %>
+                             </div>
+                             <div class="password__input">
+                                <%= f.label :current_password %> <br />
+                                <%= f.password_field :current_password, autocomplete: "current-password" %>
+                             </div>
+                             <div class="password__input">
+                                <%= f.label :firstname, "First Name" %> <br />
+                                <%= f.text_field :firstname %>
+                             </div>
+                             <div class="password__input">
+                                <%= f.label :lastname, "Last Name"%> <br />
+                                <%= f.text_field :lastname %>
+                             </div>
+                             <div class="password__input">
+                                <%= f.submit "Update" %>
+                             </div>
+                             <% end %>
+                       </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
