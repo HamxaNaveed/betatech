@@ -16,20 +16,20 @@ class User < ApplicationRecord
 
   enum status: %i[non-active active]
 
-  def active_for_authentication?
-    if super && active?
-      true
-    else
-      message = "Your account is not active. Please contact the administrator."
-      redirect_to root_path, alert: message
-      false
-    end
-  end
+  # def active_for_authentication?
+  #   if super && active?
+  #     true
+  #   else
+  #     message = "Your account is not active. Please contact the administrator."
+  #     redirect_to root_path, alert: message
+  #     false
+  #   end
+  # end
 
-  def active?
-    status == 'active'
-  end
-  
+  # def active?
+  #   status == 'active'
+  # end
+
   after_create :assign_default_role
 
   def assign_default_role
