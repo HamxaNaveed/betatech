@@ -78,6 +78,9 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
+  config.assets.compile = true
+  config.assets.digest = true
+
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
@@ -88,19 +91,19 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'betatech.012@gmail.com'}
+  # config.action_mailer.default_options = {from: 'betatech.012@gmail.com'}
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'mail.gmail.com',
-    user_name:            'betatech.012@gmail.com',
-    password:             'betatech1234',
-    authentication:       'plain',
-    enable_starttls_auto: true,
-    open_timeout:         5,
-    read_timeout:         5 }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'mail.gmail.com',
+  #   user_name:            'betatech.012@gmail.com',
+  #   password:             'betatech1234',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true,
+  #   open_timeout:         5,
+  #   read_timeout:         5 }
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"

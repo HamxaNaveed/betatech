@@ -23,5 +23,7 @@ module Betatech
     config.active_storage.content_types_to_serve_as_binary.delete('image/svg+xml')
 
     config.middleware.use Rack::Deflater
+    config.assets.initialize_on_precompile = false
+
   end
 end
