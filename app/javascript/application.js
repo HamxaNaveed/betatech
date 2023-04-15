@@ -28,19 +28,3 @@ $(document).ready(function() {
   });
   
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const toastrContainer = document.getElementById("toastr-container");
-
-  if (toastrContainer) {
-    const notice = toastrContainer.dataset.notice;
-    const alert = toastrContainer.dataset.alert;
-
-    if (notice) {
-      toastr.success(notice);
-    }
-
-    if (alert) {
-      toastr.error(alert);
-    }
-  }
-});

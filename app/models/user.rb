@@ -20,10 +20,12 @@ class User < ApplicationRecord
     if super && active?
       true
     else
-      flash[:alert] = "Your account is not active. Please contact the administrator."
-      redirect_to root_path
+      message = "Your account is not active. Please contact the administrator."
+      redirect_to root_path, alert: message
       false
     end
+  end
+  
   end
 
   after_create :assign_default_role
