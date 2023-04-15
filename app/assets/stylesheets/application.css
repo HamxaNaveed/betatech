@@ -12,4 +12,103 @@
  *
  *= require_tree .
  *= require_self
+
  */
+
+ .flash-message {
+  position: fixed;
+  top: 20px;
+  right: -305px;
+  width: 300px;
+  padding: 20px;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.flash-message.show {
+  right: 50%;
+  transform: translateX(50%);
+  transition: right 0.5s ease-in-out;
+}
+
+.flash-message .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.flash-message.notice {
+  background-color: #007bff;
+}
+
+.flash-message.success {
+  background-color: #28a745;
+}
+
+.flash-message.warning {
+  background-color: #ffc107;
+}
+
+.flash-message.error {
+  background-color: hsl(354, 70%, 54%);
+}
+.more-link{
+  color: #007bff;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.slider__thumb-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.slider__thumb-mask.active {
+  opacity: 1;
+}
+sign__input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.sign__input-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.dropdown{
+  color: #000;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 995px) {
+  .hide-in-small-screen {
+     display: none;
+  }
+  #mobile-menu{
+    display: none;
+  }
+  .slider__height-2 {
+    min-height: 450px;
+}
+}
