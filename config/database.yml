@@ -20,9 +20,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV.fetch('DATABASE_HOST')|| localhost %>
-  username: <%= ENV.fetch('DATABASE_USERNAME')|| 'postgres' %>
-  password: <%= ENV.fetch('DATABASE_PASSWORD') || '1234 } %>
+  host: <%= ENV.fetch('DATABASE_HOST') {'localhost'} %>
+  username: <%= ENV.fetch('DATABASE_USERNAME') %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD')  } %>
 
 development:
   <<: *default
@@ -86,4 +86,4 @@ production:
   <<: *default
   database: betatech_production
   username: betatech
-  password: <%= ENV["BETATECH_DATABASE_PASSWORD"] || '1234' %>
+  password: <%= ENV["BETATECH_DATABASE_PASSWORD"] %>
