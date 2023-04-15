@@ -79,7 +79,5 @@ gem 'dotenv-rails'
 gem 'devise'
 gem "letter_opener", group: :development
 gem "rolify"
-gem 'rails_admin'
 gem 'friendly_id'
 gem 'aos', '~> 0.1.0'
-gem "cssbundling-rails"
