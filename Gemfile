@@ -82,3 +82,4 @@ gem "rolify"
 gem 'rails_admin'
 gem 'friendly_id'
 gem 'aos', '~> 0.1.0'
+gem "cssbundling-rails"
