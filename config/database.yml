@@ -86,4 +86,4 @@ production:
   <<: *default
   database: betatech_production
   username: betatech
-  password: <%= ENV["BUG_DATABASE_PASSWORD"] %>
+  password: <%= ENV["BETATECH_DATABASE_PASSWORD"] %>
