@@ -26,6 +26,10 @@ class User < ApplicationRecord
     end
   end
 
+  def active?
+    status == 'active'
+  end
+  
   after_create :assign_default_role
 
   def assign_default_role
