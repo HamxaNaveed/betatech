@@ -81,3 +81,5 @@ gem "letter_opener", group: :development
 gem "rolify"
 gem 'friendly_id'
 gem 'aos', '~> 0.1.0'
+gem 'rails_admin', '~> 3.0'
+gem "cssbundling-rails"
