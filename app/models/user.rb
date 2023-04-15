@@ -25,8 +25,6 @@ class User < ApplicationRecord
       false
     end
   end
-  
-  end
 
   after_create :assign_default_role
 
