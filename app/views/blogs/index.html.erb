@@ -32,8 +32,10 @@
                      <article class="postbox__item format-image mb-50 transition-3">
                         <div class="postbox__thumb w-img">
                            <%= link_to blog_path(blog.slug) do %>
+                           <% if blog.image.attached? %>
                               <%= image_tag blog.image %>
-                                 <% end %>
+                           <% end %>
+                           <% end %>
                         </div>
                         <div class="postbox__content">
                            <div class="postbox__meta">

@@ -66,7 +66,9 @@
                          <ul>
                             <li>
                                <a href="#">
-                                  <%= image_tag news.admin.profile %>
+                                 <% if news.admin.profile.attached? %>
+                                       <%= image_tag news.admin.profile %>
+                                    <% end %>
                                   <span><%= news.admin.first_name %> <%= news.admin.last_name %></span>
                                 </a>
                             </li>
@@ -106,7 +108,9 @@
                     <div class="team__shape">
                        <img src="images/team-shape-3.png" alt="">
                     </div>
-                    <%= image_tag admin.profile %>
+                    <% if admin.profile.attached? %>
+                       <%= image_tag admin.profile %>
+                     <% end %>
                     <div class="team__social transition-3">
                       <%= link_to admin.fb_link do %>
                       <i class="fa-brands fa-facebook-f"></i>

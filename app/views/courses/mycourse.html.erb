@@ -37,8 +37,10 @@
                                  <div class="course__item white-bg transition-3 mb-30">
                                     <div class="course__thumb w-img fix">
                                        <%= link_to course_path(course.slug) do %>
+                                       <% if course.image.attached? %>
                                           <%= image_tag course.image %>
-                                             <% end %>
+                                       <% end %>
+                                       <% end %>
                                     </div>
                                     <div class="course__content p-relative">
                                        <div class="course__price">

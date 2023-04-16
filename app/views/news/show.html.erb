@@ -23,7 +23,9 @@
             <div class="course__meta-2 d-sm-flex align-items-center mb-30">
               <div class="course__teacher-3 d-flex align-items-center mr-70 mb-30">
                 <div class="course__teacher-thumb-3 mr-15">
-                  <%= image_tag @single_news.admin.profile %>
+                  <% if @single_news.admin.profile.attached? %>
+                    <%= image_tag @single_news.admin.profile %>
+                  <% end %>
                 </div>
                 <div class="course__teacher-info-3">
                   <h5>Teacher</h5>
@@ -62,8 +64,10 @@
         <div class="col-xxl-8 col-xl-8 col-lg-8">
           <div class="event_wrapper">
             <div class="event__thumb mb-35 w-img">
-              <%= image_tag @single_news.image %>
-            </div>
+              <% if @single_news.admin.profile.attached? %>
+              <%= image_tag @single_news.admin.profile %>
+            <% end %>
+                      </div>
             <div class="event__details mb-35">
               <h3>Description</h3>
               <p><%= @single_news.description %></p>

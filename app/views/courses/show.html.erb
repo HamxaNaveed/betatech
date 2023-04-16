@@ -41,8 +41,9 @@
             <div class="col-xxl-8 col-xl-8 col-lg-8">
                <div class="event_wrapper">
                   <div class="event__thumb mb-35 w-img">
-                     <%= image_tag @course.image %>
-
+                     <% if @course.image.attached? %>
+                        <%= image_tag @course.image %>
+                     <% end %>
                   </div>
                   <div class="event__details mb-35">
                      <h3>Description</h3>

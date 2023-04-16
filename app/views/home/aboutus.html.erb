@@ -86,8 +86,10 @@
            <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
               <div class="course__item white-bg transition-3 mb-30">
                  <div class="course__thumb w-img fix">
-                  <%= link_to course_path(course.slug) do %> 
-                  <%= image_tag course.image %>
+                  <%= link_to course_path(course.slug) do %>
+                  <% if course.image.attached? %>
+                     <%= image_tag course.image %>
+                  <% end %> 
                 <% end %>
                  </div>
                  <div class="course__content p-relative">
@@ -131,7 +133,9 @@
                <div class="team__shape">
                  <img src="images/team-shape-3.png" alt="">
                </div>
-               <%= image_tag admin.profile %>
+               <% if admin.profile.attached? %>
+                  <%= image_tag admin.profile %>
+               <% end %>
                <div class="team__social transition-3">
                  <%= link_to admin.fb_link do %>
                  <i class="fa-brands fa-facebook-f"></i>
