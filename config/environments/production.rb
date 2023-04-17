@@ -38,8 +38,6 @@ Rails.application.configure do
     'Cache-Control' => "public, max-age=#{1.year.to_i}"
   }
   
-  
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
