@@ -64,11 +64,6 @@
                     <div class="sign__form justify-content-center">
                       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                       <%= render "devise/shared/error_messages", resource: resource %>
-                      <% if flash[:alert] %>
-                        <div class="alert alert-danger">
-                          <%= flash[:alert] %>
-                        </div>
-                      <% end %>
                         <div class="sign__input-wrapper mb-25">
                           <%= f.label :email %>
                             <div class="sign__input">
