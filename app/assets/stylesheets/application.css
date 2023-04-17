@@ -15,7 +15,7 @@
 
  */
 
- .flash-message {
+ /* .flash-message {
   position: fixed;
   top: 20px;
   right: -305px;
@@ -58,7 +58,7 @@
 
 .flash-message.error {
   background-color: hsl(354, 70%, 54%);
-}
+} */
 .more-link{
   color: #007bff;
 }
@@ -93,12 +93,15 @@ sign__input-container {
   max-width: 400px;
 }
 
-.dropdown{
+.has-dropdown > a{
   color: #000;
 }
 
 .btn {
   margin-top: 20px;
+}
+.mob-nav{
+  list-style: none;
 }
 
 @media screen and (max-width: 995px) {
@@ -108,7 +111,15 @@ sign__input-container {
   #mobile-menu{
     display: none;
   }
-  .slider__height-2 {
-    min-height: 450px;
+  
 }
+@media screen and (max-width: 320px) {
+  .logo img {
+     width: 100px;
+  }
+  .main-menu {
+     margin-left: 15px;
+     padding-left: 0;
+  }
 }
+

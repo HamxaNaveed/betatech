@@ -116,9 +116,11 @@
                         <% if request.fullpath.include?('mycourse') %>
                         <% else %>
                         <div class="event__join-btn">
-                           <%= link_to "Enroll" , new_course_enrollment_path(@course), class: 'tp-btn text-center w-100'
-                              %>
+                        <% if current_user && !current_user.enrolled_in?(@course) %>
+                           <%= link_to "Enroll" , new_course_enrollment_path(@course), class: 'tp-btn text-center w-100' %>
+                        <% end %>
                         </div>
+
                         <% end %>
                      </div>
                   </div>

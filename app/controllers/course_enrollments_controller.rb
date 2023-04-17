@@ -13,7 +13,7 @@ class CourseEnrollmentsController < ApplicationController
     @enrollment.user = current_user
     
     if @enrollment.save
-      flash[:notice] = "Course is enrolled"
+      flash[:success] = "Course is enrolled"
       redirect_to @course
     else
       flash[:alert] = "There was an error enrolling the course."

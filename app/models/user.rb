@@ -29,6 +29,9 @@ class User < ApplicationRecord
   # def active?
   #   status == 'active'
   # end
+  def enrolled_in?(course)
+    course_enrollements.where(course_id: course.id).exists?
+  end
 
   after_create :assign_default_role
 

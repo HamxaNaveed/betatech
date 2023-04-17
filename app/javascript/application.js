@@ -5,7 +5,6 @@ import 'bootstrap'
 
 window.jQuery = jquery
 window.$ = jquery
-import toastr from "toastr";
 
 
 $(document).ready(function() {

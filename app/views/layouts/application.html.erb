@@ -12,18 +12,12 @@
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" />
     </head>
 
   <body>
     
     <%= render "shared/header" %>
-    <% flash.each do |type, message| %>
-      <div class="flash-message <%= type %>">
-        <%= message %>
-        <span class="close">&times;</span>
-      </div>
-    <% end %>
     <%= yield %>
     <%= render "shared/footer" %>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -44,5 +38,33 @@
          },
       });
    </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+   <% if !flash.empty? %>
+  <% flash.each do |key, value| %>
+    <script>
+      var value = '<%=value%>';
+      var key = '<%=key%>';
+      var type;
+
+      if (key == "notice")
+        type = "success";
+      else if (key == "alert")
+        type = "error";
+      else
+        type = "info";
+
+      new Noty({
+        type: type,
+        layout: 'topRight',
+        theme: 'relax',
+        text: value,
+        timeout: '2000',
+        closeWith: ['click']
+      }).show();
+
+    </script>
+  <% end %>
+  <% flash.clear %>
+<% end %>
   </body>
 </html>
