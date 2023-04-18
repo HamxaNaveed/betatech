@@ -83,3 +83,4 @@ gem 'friendly_id'
 gem 'aos', '~> 0.1.0'
 gem 'rails_admin'
 gem "cssbundling-rails"
+gem "aws-sdk-s3", require: false
