@@ -1,5 +1,5 @@
 Arguments: 
-  /home/hani/.nvm/versions/node/v14.10.0/bin/node /usr/share/yarn/bin/yarn.js add font-awesome-pro
+  /home/hani/.nvm/versions/node/v14.10.0/bin/node /usr/share/yarn/bin/yarn.js add @fortawesome/fontawesome-regular
 
 PATH: 
   /home/hani/.rbenv/plugins/ruby-build/bin:/home/hani/.rbenv/shims:/home/hani/.rbenv/bin:/home/hani/.rbenv/bin:/home/hani/.rbenv/plugins/ruby-build/bin:/home/hani/.rbenv/shims:/home/hani/.rbenv/bin:/home/hani/.nvm/versions/node/v14.10.0/bin:/home/hani/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/mssql-tools/bin:/opt/mssql-tools/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/font-awesome-pro: Not found
+  Error: https://registry.yarnpkg.com/@fortawesome%2ffontawesome-regular: Not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66145:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140890:22)
       at Request.emit (events.js:314:20)
@@ -31,8 +31,6 @@ npm manifest:
     "dependencies": {
       "@fortawesome/fontawesome-free": "^6.4.0",
       "aos": "^2.3.4",
-      "font-awesome": "^4.7.0",
-      "fontawesome": "^5.6.3",
       "jquery-mask-plugin": "^1.14.16",
       "rails_admin": "3.1.2",
       "sass": "^1.62.0",
@@ -158,16 +156,6 @@ Lockfile:
     version "4.6.13"
     resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
     integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
-  
-  font-awesome@^4.7.0:
-    version "4.7.0"
-    resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-    integrity sha512-U6kGnykA/6bFmg1M/oT9EkFeIYv7JlX3bozwQJWiiLz6L0w3F5vBVPxHlwyX/vtNq1ckcpRKOB9f2Qal/VtFpg==
-  
-  fontawesome@^5.6.3:
-    version "5.6.3"
-    resolved "https://registry.yarnpkg.com/fontawesome/-/fontawesome-5.6.3.tgz#73f0b865fa2b0b384e69d531c05a02c643b72f95"
-    integrity sha512-FCc+CawwsJWWprVEg9X14yI7zI+l9YVAyhzgu70qwGeDn0tLLDH/dVfqgij72g4BBGgLGfK2qnvFGAmYUkhaWg==
   
   fsevents@~2.3.2:
     version "2.3.2"
