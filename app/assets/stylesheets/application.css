@@ -15,50 +15,6 @@
 
  */
 
- /* .flash-message {
-  position: fixed;
-  top: 20px;
-  right: -305px;
-  width: 300px;
-  padding: 20px;
-  background-color: rgb(255, 0, 0);
-  color: #fff;
-  z-index: 9999;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 5px;
-}
-
-.flash-message.show {
-  right: 50%;
-  transform: translateX(50%);
-  transition: right 0.5s ease-in-out;
-}
-
-.flash-message .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 16px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.flash-message.notice {
-  background-color: #007bff;
-}
-
-.flash-message.success {
-  background-color: #28a745;
-}
-
-.flash-message.warning {
-  background-color: #ffc107;
-}
-
-.flash-message.error {
-  background-color: hsl(354, 70%, 54%);
-} */
 .more-link{
   color: #007bff;
 }
@@ -104,6 +60,7 @@ sign__input-container {
   list-style: none;
 }
 
+
 @media screen and (max-width: 995px) {
   .hide-in-small-screen {
      display: none;
@@ -120,6 +77,11 @@ sign__input-container {
   .main-menu {
      margin-left: 15px;
      padding-left: 0;
+  }
+  ul {
+    list-style: none; /* Remove default list-style */
+    margin: 0;
+    padding: 0;
   }
 }
 

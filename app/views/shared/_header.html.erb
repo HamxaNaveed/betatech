@@ -122,7 +122,7 @@
                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29176.030811137334!2d90.3883827!3d23.924917699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1605272373598!5m2!1sen!2sbd"></iframe>
                </div>
                <nav >
-                  <ul class="mob-nav">
+                  <ul class="mob-nav" style="list-style: none; text-transform: uppercase; font-weight: bolder;">
                      <li>
                         <%= link_to "Home" , root_path %>
                      </li>
@@ -132,10 +132,9 @@
                      <li>
                         <%= link_to "Courses" , courses_path %>
                      </li>
-                     
                      <li class="has-dropdown">
                         <a>Pages</a>
-                        <ul class="submenu">
+                        <ul class="submenu" style="list-style: none;">
                            <li>
                               <%= link_to "Certificate Validation" , new_certificate_path %>
                            </li>
@@ -152,36 +151,18 @@
                      <li>
                         <%= link_to "Contact" , new_contact_path %>
                      </li>
-                     <ul>
                         <li>
                            <% if user_signed_in? %>
                               <%= link_to destroy_user_session_path, method: :delete do %>
-                                 <%= raw('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
-                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                    <polyline points="16 17 21 12 16 7"></polyline>
-                                    <line x1="21" y1="12" x2="9" y2="12"></line></svg>') %>
+                              
                                     Logout
                                     <% end %>
                                        <% else %>
                                           <%= link_to user_session_path do %>
-                                             <%= raw('<svg width="15" height="20" viewBox="0 0 15 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                   d="M7.1466 8.96416C7.05493 8.95499 6.94493 8.95499 6.8441 8.96416C4.66243 8.89083 2.92993 7.10333 2.92993 4.90333C2.92993 2.65749 4.74493 0.833328 6.99993 0.833328C9.24576 0.833328 11.0699 2.65749 11.0699 4.90333C11.0608 7.10333 9.32826 8.89083 7.1466 8.96416Z"
-                                                   stroke="#0C140F" stroke-width="1.5" stroke-linecap="round"
-                                                   stroke-linejoin="round" />
-                                                <path
-                                                   d="M2.56341 12.3467C0.345075 13.8317 0.345075 16.2517 2.56341 17.7275C5.08424 19.4142 9.21841 19.4142 11.7392 17.7275C13.9576 16.2425 13.9576 13.8225 11.7392 12.3467C9.22758 10.6692 5.09341 10.6692 2.56341 12.3467Z"
-                                                   stroke="#0C140F" stroke-width="1.5" stroke-linecap="round"
-                                                   stroke-linejoin="round" />
-                                                </svg>') %>
                                                 Login
                                                 <% end %>
                                                    <% end %>
                         </li>
-                     </ul>
                   </ul>
                </nav>
                <div class="offcanvas__contact mt-30 mb-20">
@@ -199,7 +180,7 @@
                      </li>
                      <li class="d-flex align-items-center">
                         <div class="offcanvas__contact-icon mr-15">
-                           <i class="far fa-phone"></i>
+                           <i class="fas fa-phone"></i>
                         </div>
                         <div class="offcanvas__contact-text">
                            <a href="mailto:support@gmail.com">088889797697</a>
