@@ -35,4 +35,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :assignments, only: [:new, :create]
+
+  get '*path', to: 'application#render_404'
+
 end
