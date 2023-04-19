@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
+
   root "home#index"
   get '/users/profile' => 'home#profile'
   get '/aboutus' => 'home#aboutus'
@@ -35,7 +36,4 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :assignments, only: [:new, :create]
-
-  get '*path', to: 'application#render_404'
-
 end
