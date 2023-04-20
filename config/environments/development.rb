@@ -74,8 +74,8 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            '',
-    # password:             'hmqxhjgcoukupetg',
+    user_name:            'official.betatech@gmail.com',
+    password:             'rrqcfrjubsllhupa',
     authentication:       'plain',
   }
   # ActionMailer::Base.smtp_settings = {

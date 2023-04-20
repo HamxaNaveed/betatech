@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Add your custom CSS styles here */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        color: #333333;
+        line-height: 1.5;
+      }
 
-<head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-</head>
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
 
-<body>
-  <h1>
-    <%= @contact.name %>, Contacted You
-  </h1>
-  <p>
-    <%= @contact.message %>
-  </p>
-</body>
+      p {
+        margin-bottom: 20px;
+      }
 
+      a {
+        color: #007bff;
+        text-decoration: underline;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to My App!</h1>
+
+    <p>Hi <%= @contact.name %>,</p>
+
+    <p>Thank you for contacting us. We're excited to have you as a user!</p>
+
+    <p>To get started, please visit our <a href="<%= root_url %>">website</a> and log in using your email and password.</p>
+
+    <p>If you have any questions or feedback. We'd love to hear from you!</p>
+
+    <p>Best regards,</p>
+
+    <p>The BetaTech Team</p>
+
+    <table cellpadding="0" cellspacing="0" border="0" align="center">
+      <tr>
+        <td>
+          <%= link_to "Visit My App", root_url, class: "btn" %>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

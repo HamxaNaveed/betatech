@@ -102,6 +102,13 @@
                     <i class="fal fa-lock"></i>
                   </div>
                 </div>
+                <div class="sign__input-wrapper mb-10">
+                  <%= f.label :profile %>
+                  <div class="sign__input">
+                    <%= f.file_field :profile, class: "form-control" %>
+                    <i class="fal fa-file"></i>
+                  </div>
+                </div>
               </div>
               <div class="text-center">
                 <%= f.submit "Sign Up", class: "btn btn-primary btn-lg" %>
