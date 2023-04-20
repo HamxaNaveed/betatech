@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         ContactsMailer.send_email(@contact).deliver_now
+        ContactsMailer.admin_email(@contact).deliver_now
         format.html { redirect_to root_path, notice: "Thanks for your Submission, We will contact you soon" }
         format.json { render :show, status: :created, location: @contact }
       else

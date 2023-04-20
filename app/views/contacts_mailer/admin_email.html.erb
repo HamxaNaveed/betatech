@@ -38,18 +38,23 @@
   </head>
 
   <body>
-    <h1>Welcome to Beta Tech!</h1>
+    <h1>Contact Form Submission</h1>
 
-    <p>Hi <%= @contact.name %>,</p>
+    <p>Dear Admin,</p>
 
-    <p>Thank you for contacting us. We're excited to have you as a user!</p>
+    <p>You have received a new message from a user:</p>
 
-    <p>To get started, please visit our <a href="<%= root_url %>">website</a> and log in using your email and password.</p>
+    <ul>
+      <li>Name: <%= @contact.name %></li>
+      <li>Email: <%= @contact.email %></li>
+      <li>Message: <%= @contact.message %></li>
+    </ul>
 
-    <p>If you have any questions or feedback. We'd love to hear from you!</p>
+    <p>Please follow up with the user as soon as possible.</p>
 
     <p>Best regards,</p>
 
-    <p>The BetaTech Team</p>
+    <p>The Beta Tech Team</p>
+
   </body>
 </html>
