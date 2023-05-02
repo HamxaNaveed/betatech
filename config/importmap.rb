@@ -9,3 +9,5 @@ pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.2.3/dist/js/bootstrap.e
 pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.2/dist/esm/index.js"
 pin "jquery", to: "https://ga.jspm.io/npm:jquery@3.6.4/dist/jquery.js"
 pin "toastr", to: "https://ga.jspm.io/npm:toastr@2.1.4/toastr.js"
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.js"

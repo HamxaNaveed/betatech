@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  *= require @fortawesome/fontawesome
+ *= require fontawesome
+
  */
+
 
 .more-link{
   color: #007bff;

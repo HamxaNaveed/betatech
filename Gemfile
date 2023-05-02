@@ -46,7 +46,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -84,3 +84,6 @@ gem 'aos', '~> 0.1.0'
 gem 'rails_admin'
 gem "cssbundling-rails"
 gem "aws-sdk-s3", require: false
+gem 'arctic_admin'
+gem 'font-awesome-sass' 
+gem "font-awesome-rails"

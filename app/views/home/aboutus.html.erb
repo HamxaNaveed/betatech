@@ -102,11 +102,10 @@
                     <h3 class="course__title">
                       <%= link_to course.title, course_path(course.slug) %>
                     </h3>
-                    <% if course.description.length > 250 %>
-                    <p><%= truncate(course.description, length: 250) %> <%= link_to 'Read more', course_path(course.slug), class: 'more-link' %></p>
+                    <!-- <% if course.description.to_plain_text.length > 250 %>
                     <% else %>
                       <p><%= course.description %></p>
-                    <% end %>
+                    <% end %> -->
                  </div>
               </div>
            </div>

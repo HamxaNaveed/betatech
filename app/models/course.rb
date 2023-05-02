@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
   extend FriendlyId
   friendly_id :slug, use: :slugged
+  has_rich_text :description
 
   belongs_to :course_category
   has_one_attached :image

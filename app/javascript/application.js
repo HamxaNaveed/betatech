@@ -2,6 +2,9 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import jquery from 'jquery'
 import 'bootstrap'
+import "trix"
+import "@rails/actiontext"
+
 
 window.jQuery = jquery
 window.$ = jquery
@@ -27,3 +30,4 @@ $(document).ready(function() {
   });
   
 });
+
