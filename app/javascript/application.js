@@ -22,12 +22,14 @@ $(document).ready(function() {
   });
   const contactField = document.getElementById('contact-field');
 
-  contactField.addEventListener('input', () => {
-    let value = contactField.value;
-    value = value.replace(/[^0-9]/g, ''); // remove all non-numeric characters
-    value = value.replace(/(\d{4})(\d{1,})/, '$1-$2'); // add a dash after the first four digits
-    contactField.value = value;
-  });
+  if (contactField) {
+    contactField.addEventListener('input', () => {
+      let value = contactField.value;
+      value = value.replace(/[^0-9]/g, ''); // remove all non-numeric characters
+      value = value.replace(/(\d{4})(\d{1,})/, '$1-$2'); // add a dash after the first four digits
+      contactField.value = value;
+    });
+  }
   
 });
 
