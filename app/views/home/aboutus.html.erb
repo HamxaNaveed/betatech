@@ -23,27 +23,8 @@
   <section class="about__area pt-120 pb-120 p-relative">
    <div class="container">
       <div class="row">
-         <div class="col-xxl-7 col-xl-7 col-lg-7">
-            <div class="about__thumb-wrapper d-sm-flex mr-20 p-relative">
-               <div class="about__shape">
-                  <img class="about__shape-1 d-none d-sm-block" src="images/about-shape-1.png" alt="">
-                  <img class="about__shape-2 d-none d-sm-block" src="images/about-shape-2.png" alt="">
-                  <img class="about__shape-3" src="images/about-shape-3.png" alt="">
-               </div>
-               <div class="about__thumb-left mr-10">
-                  <div class="about__thumb-1 mb-10">
-                     <img src="images/about-1.jpg" alt="">
-                  </div>
-                  <div class="about__thumb-1 mb-10 text-end">
-                     <img src="images/about-3.jpg" alt="">
-                  </div>
-               </div>
-               <div class="about__thumb-2 mb-10">
-                  <img src="images/about-2.jpg" alt="">
-               </div>
-            </div>
-         </div>
-         <div class="col-xxl-6 col-xl-5 col-lg-5">
+         
+         <div class="col-xxl-12 col-xl-12 col-lg-12">
             <div class="about__content pl-70 pr-25">
                <div class="section__title-wrapper mb-15">
                   <span class="section__title-pre">About Betatech</span>
@@ -54,7 +35,7 @@
                   courses to individuals and businesses. Our institute offers a wide range of computer science
                   courses, from basic computer skills to advanced programming languages and software development.
                   Our courses are designed to meet the needs of different skill levels, from beginner to advanced.
-                 .</p>
+                 </p>
 
                <div class="about__list mb-40">
                   <ul>
@@ -94,9 +75,12 @@
        <div class="col-12">
          <div class="ceo-message__content text-center">
            <div class="row">
-             <div class="col-md-4">
-               <img src="images/sarim.jpg" alt="" width="300" class="img-fluid">
+            <div class="col-md-4">
+               <div class="image-container">
+                 <img src="images/sarim.jpg" alt="" width="250" class="img-fluid about-img">
+                 </div>
              </div>
+
              <div class="col-md-8">
                <h2 class="ceo-message__title">CEO Message</h2><br>
                <div class="d-flex justify-content-center align-items-center">
@@ -110,7 +94,9 @@
            <br>
            <div class="row">
              <div class="col-md-4">
-               <img src="images/abid.jpg" alt="" width="300" class="img-fluid">
+               <div class="image-container">
+                 <img src="images/abid.jpg" alt="" width="250" class="img-fluid about-img">
+                 </div>
              </div>
              <div class="col-md-8">
                <h2 class="ceo-message__title">MD Message</h2><br>
@@ -134,98 +120,5 @@
  
  
 
-  <!-- course area start -->
-  <section class="course__area pt-115 pb-90 grey-bg-3">
-     <div class="container">
-        <div class="row">
-           <div class="col-xxl-12">
-              <div class="section__title-wrapper text-center mb-60">
-                 <span class="section__title-pre">Top Courses</span>
-                 <h2 class="section__title section__title-44">Our Featured Courses</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing aelit, sed do eiusmod</p>
-              </div>
-           </div>
-        </div>
-        <div class="row">
-          <% @courses.each do |course|%>
-           <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
-              <div class="course__item white-bg transition-3 mb-30">
-                 <div class="course__thumb w-img fix">
-                  <%= link_to course_path(course.slug) do %>
-                  <% if course.image.attached? %>
-                     <%= image_tag course.image %>
-                  <% end %> 
-                <% end %>
-                 </div>
-                 <div class="course__content p-relative">
-                    <div class="course__price">
-                       <span>RS <%= course.price %></span>
-                    </div>
-                    <div class="course__tag">
-                       <a href="#"><%= course.course_category.name %></a>
-                    </div>
-                    <h3 class="course__title">
-                      <%= link_to course.title, course_path(course.slug) %>
-                    </h3>
-                    <!-- <% if course.description.to_plain_text.length > 250 %>
-                    <% else %>
-                      <p><%= course.description %></p>
-                    <% end %> -->
-                 </div>
-              </div>
-           </div>
-           <% end %>
-        </div>
-     </div>
-  </section>
-
-  <section class="team__area pt-115">
-     <div class="container">
-        <div class="row align-items-end">
-           <div class="col-xxl-6 col-xl-6 col-lg-6">
-              <div class="section__title-wrapper-2 mb-40">
-                 <span class="section__title-pre-2">Top Instructors</span>
-                 <h3 class="section__title-2">Become A Instruction Instructor.</h3>
-              </div>
-           </div>
-        </div>
-        <div class="row">
-         <% @admins.each do |admin| %>
-         <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
-           <div class="team__item text-center mb-40">
-             <div class="team__thumb">
-               <div class="team__shape">
-                 <img src="images/team-shape-3.png" alt="">
-               </div>
-               <% if admin.profile.attached? %>
-                  <%= image_tag admin.profile %>
-               <% end %>
-               <div class="team__social transition-3">
-                 <%= link_to admin.fb_link do %>
-                 <i class="fa-brands fa-facebook-f"></i>
-                 <% end %>
-                 <%= link_to admin.twitter_link do %>
-                 <i class="fa-brands fa-twitter"></i>
-                 <% end %>
-                 <%= link_to admin.pintrest_link do %>
-                 <i class="fa-brands fa-pinterest-p"></i>
-                 <% end %>
-                 <%= link_to admin.linkedin do %>
-                 <i class="fa-brands fa-linkedin-in"></i>
-                 <% end %>
-               </div>
-             </div>
-             <div class="team__content">
-               <h3 class="team__title">
-                 <a href=""><%= admin.first_name%> <%= admin.last_name%></a>
-               </h3>
-                    <span class="team__designation">Professor</span>
-                 </div>
-              </div>
-           </div>
-           <% end %>
-        </div>
-     </div>
-  </section>
   
 </main>
