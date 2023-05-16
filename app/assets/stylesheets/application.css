@@ -120,3 +120,8 @@ sign__input-container {
 .image-container:hover .about-img {
   transform: scale(1.1);
 }
+
+.ceo-message__title{
+  font-size: xx-large;
+  font-weight: bold;
+ }
