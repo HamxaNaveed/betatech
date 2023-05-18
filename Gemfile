@@ -83,7 +83,9 @@ gem 'friendly_id'
 gem 'aos', '~> 0.1.0'
 gem 'rails_admin'
 gem "cssbundling-rails"
+gem 'uglifier'
 gem "aws-sdk-s3", require: false
 gem 'arctic_admin'
 gem 'font-awesome-sass' 
 gem "font-awesome-rails"
+gem 'sass-rails'
