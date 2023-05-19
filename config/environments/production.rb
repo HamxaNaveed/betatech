@@ -25,17 +25,13 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Compress CSS using a preprocessor.
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
 
   config.public_file_server.headers = {
     'Cache-Control' => 'public, max-age=31536000',
     'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
-  }
-  config.public_file_server.headers = {
-    'Cache-Control' => "public, max-age=#{1.year.to_i}"
   }
   
   config.active_storage.service = :amazon
