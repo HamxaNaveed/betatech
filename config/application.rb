@@ -28,6 +28,7 @@ module Betatech
 # Enable the asset pipeline
     config.assets.enabled = true
 
+    Rails.application.config.assets.precompile += %w( .woff .woff2 .ttf )
 
   end
 end
