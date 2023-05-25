@@ -1,9 +1,9 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show ]
+  before_action :set_course, only: %i[show]
   def index
     @courses = Course.all
   end
-    
+
   def new
     @course = Course.new
   end
@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
   end
 
   private
-    
+
   def set_course
     @course = Course.find_by!(slug: params[:slug])
   end

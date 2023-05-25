@@ -11,7 +11,7 @@ class CourseEnrollmentsController < ApplicationController
   def create
     @enrollment = @course.course_enrollements.build(enrollment_params)
     @enrollment.user = current_user
-    
+
     if @enrollment.save
       flash[:success] = "Course is enrolled"
       redirect_to @course

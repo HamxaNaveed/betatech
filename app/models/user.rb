@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+    :recoverable, :rememberable, :validatable, :confirmable
   has_one_attached :cnic_front
   has_one_attached :profile
   has_one_attached :cnic_back
@@ -36,6 +36,6 @@ class User < ApplicationRecord
   after_create :assign_default_role
 
   def assign_default_role
-    self.add_role(:newuser) if self.roles.blank?
+    add_role(:newuser) if roles.blank?
   end
 end

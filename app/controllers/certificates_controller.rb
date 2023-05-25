@@ -1,5 +1,5 @@
 class CertificatesController < ApplicationController
-  before_action :set_certificate,  only: %i[ show ]
+  before_action :set_certificate, only: %i[show]
 
   def show
   end
@@ -29,7 +29,7 @@ class CertificatesController < ApplicationController
   end
 
   private
-  
+
   def set_certificate
     @certificate = Certificate.find_by!(id: params[:id])
   end

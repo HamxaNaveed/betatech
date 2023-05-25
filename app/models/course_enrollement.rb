@@ -3,5 +3,4 @@ class CourseEnrollement < ApplicationRecord
   belongs_to :course
 
   enum status: %i[non-active active]
-
 end

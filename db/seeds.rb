@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 unless Admin.exists?
   Admin.create!(
-    email: 'admin@example.com',
-    password: 'password',
-    password_confirmation: 'password'
+    email: "admin@example.com",
+    password: "password",
+    password_confirmation: "password"
   )
 end

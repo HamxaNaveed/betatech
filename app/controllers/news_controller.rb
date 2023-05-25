@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :set_news, only: %i[ show ]
+  before_action :set_news, only: %i[show]
 
   def index
     @news = News.all
@@ -10,7 +10,7 @@ class NewsController < ApplicationController
   end
 
   private
-  
+
   def set_news
     @single_news = News.find_by!(slug: params[:slug])
   end

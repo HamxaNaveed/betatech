@@ -6,6 +6,5 @@ class Addfieldstoadmin < ActiveRecord::Migration[7.0]
     add_column :admins, :twitter_link, :string
     add_column :admins, :pintrest_link, :string
     add_column :admins, :linkedin, :string
-
   end
 end

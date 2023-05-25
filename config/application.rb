@@ -17,18 +17,17 @@ module Betatech
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    config.assets.precompile += ['application.css']
+    config.assets.precompile += ["application.css"]
 
     # config.eager_load_paths << Rails.root.join("extras")
-    config.active_storage.content_types_to_serve_as_binary.delete('image/svg+xml')
+    config.active_storage.content_types_to_serve_as_binary.delete("image/svg+xml")
 
     config.middleware.use Rack::Deflater
     config.assets.initialize_on_precompile = false
-    config.assets.paths << Rails.root.join('node_modules')
-# Enable the asset pipeline
+    config.assets.paths << Rails.root.join("node_modules")
+    # Enable the asset pipeline
     config.assets.enabled = true
 
-    Rails.application.config.assets.precompile += %w( .woff .woff2 .ttf )
-
+    Rails.application.config.assets.precompile += %w[.woff .woff2 .ttf]
   end
 end

@@ -9,10 +9,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @blog }
-        format.js
       else
         format.html { redirect_to @blog, alert: "Comment not created." }
-        format.js
       end
     end
   end
